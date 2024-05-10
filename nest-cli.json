@@ -1,0 +1,33 @@
+{
+  "language": "ts",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "src",
+  "monorepo": true,
+  "root": "",
+  "compilerOptions": {
+    "plugins": ["@nestjs/swagger"],
+    "deleteOutDir": true,
+    "tsConfigPath": "tsconfig.json"
+  },
+  "plugins": [
+    {
+      "name": "@nestjs/swagger",
+      "options": {
+        "dtoFileNameSuffix": [".dto.ts", ".entity.ts", ".model.ts"],
+        "classValidatorShim": true,
+        "introspectComments": true
+      }
+    }
+  ],
+  "projects": {
+    "api": {
+      "type": "application",
+      "root": "apps/api",
+      "entryFile": "main",
+      "sourceRoot": "src",
+      "compilerOptions": {
+        "tsConfigPath": "tsconfig.json"
+      }
+    }
+  }
+}
