@@ -1,9 +1,6 @@
 import { InjectRedis } from '@liaoliaots/nestjs-redis'
 import { Injectable } from '@nestjs/common'
 
-import Redis from 'ioredis'
-import { isEmpty } from 'lodash'
-
 import { BusinessException } from '@server/common/exceptions/biz.exception'
 
 import { ErrorEnum } from '@server/constants/error-code.constant'
@@ -11,6 +8,8 @@ import { ErrorEnum } from '@server/constants/error-code.constant'
 import { UserService } from '@server/modules/user/user.service'
 
 import { md5 } from '@server/utils'
+import Redis from 'ioredis'
+import { isEmpty } from 'lodash'
 
 import { LoginLogService } from '../system/log/services/login-log.service'
 import { MenuService } from '../system/menu/menu.service'

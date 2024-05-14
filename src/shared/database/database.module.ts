@@ -3,11 +3,10 @@ import { Module } from '@nestjs/common'
 import { ConfigService } from '@nestjs/config'
 import { TypeOrmModule } from '@nestjs/typeorm'
 
-import { LoggerOptions } from 'typeorm'
-
 import { IDatabaseConfig } from '@server/config'
 
 import { env } from '@server/global/env'
+import { LoggerOptions } from 'typeorm'
 
 import { EntityExistConstraint } from './constraints/entity-exist.constraint'
 import { UniqueConstraint } from './constraints/unique.constraint'

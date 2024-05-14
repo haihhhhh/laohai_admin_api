@@ -1,9 +1,8 @@
 import type { ExecutionContext } from '@nestjs/common'
 
 import { createParamDecorator } from '@nestjs/common'
-import type { FastifyRequest } from 'fastify'
-
 import { getIp } from '@server/utils/ip.util'
+import type { FastifyRequest } from 'fastify'
 
 /**
  * 快速获取IP

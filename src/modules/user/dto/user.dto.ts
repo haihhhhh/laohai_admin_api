@@ -1,4 +1,5 @@
 import { ApiProperty, IntersectionType, PartialType } from '@nestjs/swagger'
+import { PagerDto } from '@server/common/dto/pager.dto'
 import { Type } from 'class-transformer'
 import {
   ArrayMaxSize,
@@ -15,8 +16,6 @@ import {
   ValidateIf,
 } from 'class-validator'
 import { isEmpty } from 'lodash'
-
-import { PagerDto } from '@server/common/dto/pager.dto'
 
 export class UserDto {
   @ApiProperty({ description: '登录账号', example: 'admin' })
@@ -72,6 +71,11 @@ export class UserDto {
   @IsOptional()
   @IsString()
   remark?: string
+
+  @ApiProperty({ description: '头像' })
+  @IsOptional()
+  @IsString()
+  avatar: string
 
   @ApiProperty({ description: '状态' })
   @IsIn([0, 1])

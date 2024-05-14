@@ -1,3 +1,9 @@
+import { AbstractEntity } from '@server/common/entity/abstract.entity'
+
+import { AccessTokenEntity } from '@server/modules/auth/entities/access-token.entity'
+
+import { DeptEntity } from '@server/modules/system/dept/dept.entity'
+import { RoleEntity } from '@server/modules/system/role/role.entity'
 import { Exclude } from 'class-transformer'
 import {
   Column,
@@ -9,13 +15,6 @@ import {
   OneToMany,
   Relation,
 } from 'typeorm'
-
-import { AbstractEntity } from '@server/common/entity/abstract.entity'
-
-import { AccessTokenEntity } from '@server/modules/auth/entities/access-token.entity'
-
-import { DeptEntity } from '@server/modules/system/dept/dept.entity'
-import { RoleEntity } from '@server/modules/system/role/role.entity'
 
 @Entity({ name: 'sys_user' })
 export class UserEntity extends AbstractEntity {

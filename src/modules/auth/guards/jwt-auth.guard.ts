@@ -5,12 +5,12 @@ import {
 } from '@nestjs/common'
 import { Reflector } from '@nestjs/core'
 import { AuthGuard } from '@nestjs/passport'
-import { FastifyRequest } from 'fastify'
-import { isEmpty, isNil } from 'lodash'
 
 import { BusinessException } from '@server/common/exceptions/biz.exception'
 import { ErrorEnum } from '@server/constants/error-code.constant'
 import { AuthService } from '@server/modules/auth/auth.service'
+import { FastifyRequest } from 'fastify'
+import { isEmpty, isNil } from 'lodash'
 
 import { AuthStrategy, PUBLIC_KEY } from '../auth.constant'
 import { TokenService } from '../services/token.service'
@@ -42,9 +42,6 @@ export class JwtAuthGuard extends AuthGuard(AuthStrategy.JWT) {
     }
     catch (e) {
       // 需要后置判断 这样携带了 token 的用户就能够解析到 request.user
-      console.log("需要后置判断 这样携带了 token 的用户就能够解析到 request.user")
-      console.log(e.message);
-      console.log("isPulic="+isPublic);
       if (isPublic)
         return true
 

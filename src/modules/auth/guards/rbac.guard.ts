@@ -5,11 +5,11 @@ import {
   UnauthorizedException,
 } from '@nestjs/common'
 import { Reflector } from '@nestjs/core'
-import { FastifyRequest } from 'fastify'
 
 import { BusinessException } from '@server/common/exceptions/biz.exception'
 import { ErrorEnum } from '@server/constants/error-code.constant'
 import { AuthService } from '@server/modules/auth/auth.service'
+import { FastifyRequest } from 'fastify'
 
 import { ALLOW_ANON_KEY, PERMISSION_KEY, PUBLIC_KEY, Roles } from '../auth.constant'
 
@@ -45,9 +45,7 @@ export class RbacGuard implements CanActivate {
 
     const payloadPermission = this.reflector.getAllAndOverride<
       string | string[]
-    >(PERMISSION_KEY,
-      [context.getHandler(), context.getClass()],
-    )
+    >(PERMISSION_KEY, [context.getHandler(), context.getClass()])
 
     // 控制器没有设置接口权限，则默认通过
     if (!payloadPermission)

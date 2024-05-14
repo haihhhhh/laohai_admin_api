@@ -1,8 +1,8 @@
 import { ApiProperty } from '@nestjs/swagger'
-import { IsInt, IsString, Matches, MaxLength, MinLength } from 'class-validator'
 
 import { UserEntity } from '@server/modules/user/entities/user.entity'
 import { IsEntityExist } from '@server/shared/database/constraints/entity-exist.constraint'
+import { IsInt, IsString, Matches, MaxLength, MinLength } from 'class-validator'
 
 export class PasswordUpdateDto {
   @ApiProperty({ description: '旧密码' })

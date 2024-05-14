@@ -1,7 +1,5 @@
 import { Injectable } from '@nestjs/common'
 import { InjectEntityManager, InjectRepository } from '@nestjs/typeorm'
-import { isEmpty } from 'lodash'
-import { EntityManager, Repository, TreeRepository } from 'typeorm'
 
 import { BusinessException } from '@server/common/exceptions/biz.exception'
 import { ErrorEnum } from '@server/constants/error-code.constant'
@@ -9,6 +7,8 @@ import { DeptEntity } from '@server/modules/system/dept/dept.entity'
 import { UserEntity } from '@server/modules/user/entities/user.entity'
 
 import { deleteEmptyChildren } from '@server/utils/list2tree.util'
+import { isEmpty } from 'lodash'
+import { EntityManager, Repository, TreeRepository } from 'typeorm'
 
 import { RoleService } from '../role/role.service'
 

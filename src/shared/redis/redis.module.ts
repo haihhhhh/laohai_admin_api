@@ -3,10 +3,9 @@ import { CacheModule } from '@nestjs/cache-manager'
 import { Global, Module, Provider } from '@nestjs/common'
 import { ConfigModule, ConfigService } from '@nestjs/config'
 
+import { IRedisConfig } from '@server/config'
 import { redisStore } from 'cache-manager-ioredis-yet'
 import { RedisOptions } from 'ioredis'
-
-import { IRedisConfig } from '@server/config'
 
 import { CacheService } from './cache.service'
 import { RedisSubPub } from './redis-subpub'

@@ -1,4 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger'
+import { AbstractEntity } from '@server/common/entity/abstract.entity'
 import {
   Column,
   Entity,
@@ -8,8 +9,6 @@ import {
   TreeChildren,
   TreeParent,
 } from 'typeorm'
-
-import { AbstractEntity } from '@server/common/entity/abstract.entity'
 
 import { UserEntity } from '../../user/entities/user.entity'
 

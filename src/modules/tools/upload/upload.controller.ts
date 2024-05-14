@@ -1,4 +1,4 @@
-import { BadRequestException, Body, Controller, Post, Req } from '@nestjs/common'
+import { BadRequestException, Controller, Post, Req } from '@nestjs/common'
 import { ApiConsumes, ApiOperation, ApiTags } from '@nestjs/swagger'
 
 import { ApiSecurityAuth } from '@server/common/decorators/swagger.decorator'
@@ -6,8 +6,9 @@ import { AuthUser } from '@server/modules/auth/decorators/auth-user.decorator'
 
 import { Perm } from '@server/modules/auth/decorators/permission.decorator'
 
-import { UploadService } from './upload.service'
 import { FastifyRequest } from 'fastify'
+
+import { UploadService } from './upload.service'
 
 @ApiSecurityAuth()
 @ApiTags('Tools - 上传模块')
@@ -30,7 +31,7 @@ export class UploadController {
       }
     }
     catch (error) {
-      console.log(error)
+      // console.log(error)
       throw new BadRequestException('上传失败')
     }
   }
