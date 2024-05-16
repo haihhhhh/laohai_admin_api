@@ -7,10 +7,9 @@ import {
   WebSocketServer,
 } from '@nestjs/websockets'
 
-import { Server } from 'socket.io'
-
 import { TokenService } from '@server/modules/auth/services/token.service'
 import { CacheService } from '@server/shared/redis/cache.service'
+import { Server } from 'socket.io'
 
 import { createAuthGateway } from '../shared/auth.gateway'
 

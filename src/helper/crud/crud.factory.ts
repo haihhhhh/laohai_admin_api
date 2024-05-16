@@ -11,13 +11,13 @@ import {
   Query,
 } from '@nestjs/common'
 import { ApiBody, IntersectionType, PartialType } from '@nestjs/swagger'
-import pluralize from 'pluralize'
 
 import { ApiResult } from '@server/common/decorators/api-result.decorator'
 import { IdParam } from '@server/common/decorators/id-param.decorator'
 import { PagerDto } from '@server/common/dto/pager.dto'
 
 import { PermissionMap } from '@server/modules/auth/decorators/permission.decorator'
+import pluralize from 'pluralize'
 
 import { BaseService } from './base.service'
 

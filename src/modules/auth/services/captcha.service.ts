@@ -1,12 +1,11 @@
 import { InjectRedis } from '@liaoliaots/nestjs-redis'
 import { Injectable } from '@nestjs/common'
 
-import Redis from 'ioredis'
-import { isEmpty } from 'lodash'
-
 import { BusinessException } from '@server/common/exceptions/biz.exception'
 import { ErrorEnum } from '@server/constants/error-code.constant'
 import { CaptchaLogService } from '@server/modules/system/log/services/captcha-log.service'
+import Redis from 'ioredis'
+import { isEmpty } from 'lodash'
 
 @Injectable()
 export class CaptchaService {

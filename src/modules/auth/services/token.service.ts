@@ -1,11 +1,11 @@
 import { Inject, Injectable } from '@nestjs/common'
 import { JwtService } from '@nestjs/jwt'
-import dayjs from 'dayjs'
 
 import { ISecurityConfig, SecurityConfig } from '@server/config'
 import { RoleService } from '@server/modules/system/role/role.service'
 import { UserEntity } from '@server/modules/user/entities/user.entity'
 import { generateUUID } from '@server/utils'
+import dayjs from 'dayjs'
 
 import { AccessTokenEntity } from '../entities/access-token.entity'
 import { RefreshTokenEntity } from '../entities/refresh-token.entity'

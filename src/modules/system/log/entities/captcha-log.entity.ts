@@ -1,7 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger'
-import { Column, Entity } from 'typeorm'
-
 import { AbstractEntity } from '@server/common/entity/abstract.entity'
+import { Column, Entity } from 'typeorm'
 
 @Entity({ name: 'sys_captcha_log' })
 export class CaptchaLogEntity extends AbstractEntity {

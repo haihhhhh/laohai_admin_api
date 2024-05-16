@@ -1,3 +1,4 @@
+import { UserEntity } from '@server/modules/user/entities/user.entity'
 import {
   BaseEntity,
   Column,
@@ -8,8 +9,6 @@ import {
   OneToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm'
-
-import { UserEntity } from '@server/modules/user/entities/user.entity'
 
 import { RefreshTokenEntity } from './refresh-token.entity'
 

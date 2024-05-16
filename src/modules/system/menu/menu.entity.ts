@@ -1,6 +1,5 @@
-import { Column, Entity, ManyToMany, Relation } from 'typeorm'
-
 import { AbstractEntity } from '@server/common/entity/abstract.entity'
+import { Column, Entity, ManyToMany, Relation } from 'typeorm'
 
 import { RoleEntity } from '../role/role.entity'
 

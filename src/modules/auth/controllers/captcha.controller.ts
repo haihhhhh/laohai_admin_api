@@ -4,12 +4,11 @@ import { ApiOperation, ApiTags } from '@nestjs/swagger'
 
 import { Throttle, ThrottlerGuard } from '@nestjs/throttler'
 
+import { ApiResult } from '@server/common/decorators/api-result.decorator'
+import { generateUUID } from '@server/utils'
 import Redis from 'ioredis'
 import { isEmpty } from 'lodash'
 import * as svgCaptcha from 'svg-captcha'
-
-import { ApiResult } from '@server/common/decorators/api-result.decorator'
-import { generateUUID } from '@server/utils'
 
 import { Public } from '../decorators/public.decorator'
 

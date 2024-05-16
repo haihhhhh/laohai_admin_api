@@ -10,10 +10,6 @@ import {
 import { ModuleRef, Reflector } from '@nestjs/core'
 import { UnknownElementException } from '@nestjs/core/errors/exceptions/unknown-element.exception'
 import { InjectRepository } from '@nestjs/typeorm'
-import { Queue } from 'bull'
-import Redis from 'ioredis'
-import { isEmpty } from 'lodash'
-import { Like, Repository } from 'typeorm'
 
 import { BusinessException } from '@server/common/exceptions/biz.exception'
 import { ErrorEnum } from '@server/constants/error-code.constant'
@@ -23,6 +19,10 @@ import { Pagination } from '@server/helper/paginate/pagination'
 
 import { TaskEntity } from '@server/modules/system/task/task.entity'
 import { MISSION_DECORATOR_KEY } from '@server/modules/tasks/mission.decorator'
+import { Queue } from 'bull'
+import Redis from 'ioredis'
+import { isEmpty } from 'lodash'
+import { Like, Repository } from 'typeorm'
 
 import {
   SYS_TASK_QUEUE_NAME,

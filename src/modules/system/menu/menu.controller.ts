@@ -9,13 +9,13 @@ import {
   Query,
 } from '@nestjs/common'
 import { ApiOperation, ApiTags } from '@nestjs/swagger'
-import { flattenDeep } from 'lodash'
 
 import { ApiResult } from '@server/common/decorators/api-result.decorator'
 import { IdParam } from '@server/common/decorators/id-param.decorator'
 import { ApiSecurityAuth } from '@server/common/decorators/swagger.decorator'
 import { Perm, PermissionMap } from '@server/modules/auth/decorators/permission.decorator'
 import { MenuEntity } from '@server/modules/system/menu/menu.entity'
+import { flattenDeep } from 'lodash'
 
 import { MenuDto, MenuQueryDto, MenuUpdateDto } from './menu.dto'
 import { MenuService } from './menu.service'

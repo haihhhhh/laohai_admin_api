@@ -2,16 +2,14 @@ import { Injectable } from '@nestjs/common'
 import { JwtService } from '@nestjs/jwt'
 import { InjectEntityManager } from '@nestjs/typeorm'
 
-import { RemoteSocket } from 'socket.io'
-import { EntityManager } from 'typeorm'
-
-import { UAParser } from 'ua-parser-js'
-
 import { BusinessException } from '@server/common/exceptions/biz.exception'
 import { ErrorEnum } from '@server/constants/error-code.constant'
 
 import { BusinessEvents } from '@server/socket/business-event.constant'
 import { AdminEventsGateway } from '@server/socket/events/admin.gateway'
+import { RemoteSocket } from 'socket.io'
+import { EntityManager } from 'typeorm'
+import { UAParser } from 'ua-parser-js'
 
 import { UserService } from '../../user/user.service'
 

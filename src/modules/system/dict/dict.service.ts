@@ -1,13 +1,12 @@
 import { Injectable } from '@nestjs/common'
 import { InjectRepository } from '@nestjs/typeorm'
 
-import { Repository } from 'typeorm'
-
 import { BusinessException } from '@server/common/exceptions/biz.exception'
 import { ErrorEnum } from '@server/constants/error-code.constant'
 import { paginate } from '@server/helper/paginate'
 import { Pagination } from '@server/helper/paginate/pagination'
 import { DictEntity } from '@server/modules/system/dict/dict.entity'
+import { Repository } from 'typeorm'
 
 import { DictDto, DictQueryDto } from './dict.dto'
 

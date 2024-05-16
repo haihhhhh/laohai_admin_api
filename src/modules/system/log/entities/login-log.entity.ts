@@ -1,7 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger'
-import { Column, Entity, JoinColumn, ManyToOne, Relation } from 'typeorm'
-
 import { AbstractEntity } from '@server/common/entity/abstract.entity'
+import { Column, Entity, JoinColumn, ManyToOne, Relation } from 'typeorm'
 
 import { UserEntity } from '../../../user/entities/user.entity'
 

@@ -1,5 +1,6 @@
 import { BadRequestException } from '@nestjs/common'
 import { ApiProperty, ApiPropertyOptional, IntersectionType, PartialType } from '@nestjs/swagger'
+import { PagerDto } from '@server/common/dto/pager.dto'
 import {
   IsDateString,
   IsIn,
@@ -17,8 +18,6 @@ import {
 } from 'class-validator'
 import * as parser from 'cron-parser'
 import { isEmpty } from 'lodash'
-
-import { PagerDto } from '@server/common/dto/pager.dto'
 
 // cron 表达式验证，bull lib下引用了cron-parser
 @ValidatorConstraint({ name: 'isCronExpression', async: false })

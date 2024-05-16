@@ -1,16 +1,15 @@
 import { InjectRedis } from '@liaoliaots/nestjs-redis'
 import { Injectable } from '@nestjs/common'
 import { InjectRepository } from '@nestjs/typeorm'
-import Redis from 'ioredis'
-import { concat, isEmpty, uniq } from 'lodash'
-
-import { In, IsNull, Like, Not, Repository } from 'typeorm'
 
 import { BusinessException } from '@server/common/exceptions/biz.exception'
 import { ErrorEnum } from '@server/constants/error-code.constant'
 import { MenuEntity } from '@server/modules/system/menu/menu.entity'
 
 import { deleteEmptyChildren, generatorMenu, generatorRouters } from '@server/utils'
+import Redis from 'ioredis'
+import { concat, isEmpty, uniq } from 'lodash'
+import { In, IsNull, Like, Not, Repository } from 'typeorm'
 
 import { RoleService } from '../role/role.service'
 
