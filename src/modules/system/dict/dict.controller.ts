@@ -1,9 +1,8 @@
 import { Body, Controller, Delete, Get, Post, Query } from '@nestjs/common'
-import { ApiOperation, ApiTags } from '@nestjs/swagger'
+import { ApiBearerAuth, ApiOperation, ApiTags } from '@nestjs/swagger'
 
 import { ApiResult } from '@server/common/decorators/api-result.decorator'
 import { IdParam } from '@server/common/decorators/id-param.decorator'
-import { ApiSecurityAuth } from '@server/common/decorators/swagger.decorator'
 import { Pagination } from '@server/helper/paginate/pagination'
 import { Perm, PermissionMap } from '@server/modules/auth/decorators/permission.decorator'
 import { DictEntity } from '@server/modules/system/dict/dict.entity'
@@ -20,7 +19,7 @@ export const permissions: PermissionMap<'system:dict'> = {
 } as const
 
 @ApiTags('System - 字典配置模块')
-@ApiSecurityAuth()
+@ApiBearerAuth()
 @Controller('dicts')
 export class DictController {
   constructor(private dictService: DictService) { }

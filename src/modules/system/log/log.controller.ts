@@ -1,8 +1,7 @@
 import { Controller, Get, Query } from '@nestjs/common'
-import { ApiOperation, ApiTags } from '@nestjs/swagger'
+import { ApiBearerAuth, ApiOperation, ApiTags } from '@nestjs/swagger'
 
 import { ApiResult } from '@server/common/decorators/api-result.decorator'
-import { ApiSecurityAuth } from '@server/common/decorators/swagger.decorator'
 import { Pagination } from '@server/helper/paginate/pagination'
 import { Perm, PermissionMap } from '@server/modules/auth/decorators/permission.decorator'
 
@@ -24,7 +23,7 @@ export const permissions: PermissionMap = {
   CaptchaList: 'system:log:captcha:list',
 }
 
-@ApiSecurityAuth()
+@ApiBearerAuth()
 @ApiTags('System - 日志模块')
 @Controller('log')
 export class LogController {

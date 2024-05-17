@@ -1,9 +1,8 @@
 import { Body, Controller, Delete, Get, Post, Put, Query } from '@nestjs/common'
-import { ApiOperation, ApiTags } from '@nestjs/swagger'
+import { ApiBearerAuth, ApiOperation, ApiTags } from '@nestjs/swagger'
 
 import { ApiResult } from '@server/common/decorators/api-result.decorator'
 import { IdParam } from '@server/common/decorators/id-param.decorator'
-import { ApiSecurityAuth } from '@server/common/decorators/swagger.decorator'
 import { BusinessException } from '@server/common/exceptions/biz.exception'
 import { ErrorEnum } from '@server/constants/error-code.constant'
 import { AuthUser } from '@server/modules/auth/decorators/auth-user.decorator'
@@ -21,7 +20,7 @@ export const permissions: PermissionMap<'system:dept'> = {
   DELETE: 'system:dept:delete',
 } as const
 
-@ApiSecurityAuth()
+@ApiBearerAuth()
 @ApiTags('System - 部门模块')
 @Controller('depts')
 export class DeptController {

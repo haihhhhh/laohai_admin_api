@@ -1,8 +1,7 @@
 import { Body, Controller, Delete, Get, Post, Put, Query } from '@nestjs/common'
-import { ApiOperation, ApiTags } from '@nestjs/swagger'
+import { ApiBearerAuth, ApiOperation, ApiTags } from '@nestjs/swagger'
 
 import { IdParam } from '@server/common/decorators/id-param.decorator'
-import { ApiSecurityAuth } from '@server/common/decorators/swagger.decorator'
 import { MenuService } from '@server/modules/system/menu/menu.service'
 
 import { Perm, PermissionMap } from '../auth/decorators/permission.decorator'
@@ -23,7 +22,8 @@ export const permissions: PermissionMap<'system:user'> = {
 } as const
 
 @ApiTags('System - 用户模块')
-@ApiSecurityAuth()
+// @ApiBearerAuth()
+@ApiBearerAuth()
 @Controller('users')
 export class UserController {
   constructor(
@@ -39,9 +39,10 @@ export class UserController {
   }
 
   @Get(':id')
-  @ApiOperation({ summary: '查询用户' })
+  @ApiOperation({ summary: '查询用户111' })
   @Perm(permissions.READ)
   async read(@IdParam() id: number) {
+    console.log(123456)
     return this.userService.info(id)
   }
 

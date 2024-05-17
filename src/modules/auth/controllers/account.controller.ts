@@ -1,9 +1,8 @@
 import { Body, Controller, Get, Post, Put, UseGuards } from '@nestjs/common'
-import { ApiExtraModels, ApiOperation, ApiTags } from '@nestjs/swagger'
+import { ApiBearerAuth, ApiExtraModels, ApiOperation, ApiTags } from '@nestjs/swagger'
 
 import { ApiResult } from '@server/common/decorators/api-result.decorator'
 
-import { ApiSecurityAuth } from '@server/common/decorators/swagger.decorator'
 import { AllowAnon } from '@server/modules/auth/decorators/allow-anon.decorator'
 import { AuthUser } from '@server/modules/auth/decorators/auth-user.decorator'
 
@@ -18,7 +17,7 @@ import { AccountUpdateDto } from '../dto/account.dto'
 import { JwtAuthGuard } from '../guards/jwt-auth.guard'
 
 @ApiTags('Account - 账户模块')
-@ApiSecurityAuth()
+@ApiBearerAuth()
 @ApiExtraModels(AccountInfo)
 @UseGuards(JwtAuthGuard)
 @Controller('account')

@@ -1,7 +1,6 @@
 import { BadRequestException, Controller, Post, Req } from '@nestjs/common'
-import { ApiConsumes, ApiOperation, ApiTags } from '@nestjs/swagger'
+import { ApiBearerAuth, ApiConsumes, ApiOperation, ApiTags } from '@nestjs/swagger'
 
-import { ApiSecurityAuth } from '@server/common/decorators/swagger.decorator'
 import { AuthUser } from '@server/modules/auth/decorators/auth-user.decorator'
 
 import { Perm } from '@server/modules/auth/decorators/permission.decorator'
@@ -10,7 +9,7 @@ import { FastifyRequest } from 'fastify'
 
 import { UploadService } from './upload.service'
 
-@ApiSecurityAuth()
+@ApiBearerAuth()
 @ApiTags('Tools - 上传模块')
 @Controller('upload')
 export class UploadController {

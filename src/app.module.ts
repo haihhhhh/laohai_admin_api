@@ -4,6 +4,7 @@ import { ConfigModule } from '@nestjs/config'
 import { APP_FILTER, APP_GUARD, APP_INTERCEPTOR } from '@nestjs/core'
 
 import * as config from '@server/config'
+import { ProductModule } from '@server/modules/product/product.module'
 import { SharedModule } from '@server/shared/shared.module'
 
 import { AllExceptionsFilter } from './common/filters/any-exception.filter'
@@ -41,7 +42,7 @@ import { SocketModule } from './socket/socket.module'
     HealthModule,
 
     // biz
-
+    ProductModule,
     // end biz
 
     TodoModule,

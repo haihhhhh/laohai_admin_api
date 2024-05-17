@@ -1,10 +1,8 @@
 import { CacheInterceptor, CacheKey, CacheTTL } from '@nestjs/cache-manager'
 import { Controller, Get, UseInterceptors } from '@nestjs/common'
-import { ApiExtraModels, ApiOperation, ApiTags } from '@nestjs/swagger'
+import { ApiBearerAuth, ApiExtraModels, ApiOperation, ApiTags } from '@nestjs/swagger'
 
 import { ApiResult } from '@server/common/decorators/api-result.decorator'
-
-import { ApiSecurityAuth } from '@server/common/decorators/swagger.decorator'
 
 import { AllowAnon } from '@server/modules/auth/decorators/allow-anon.decorator'
 
@@ -12,7 +10,7 @@ import { ServeStatInfo } from './serve.model'
 import { ServeService } from './serve.service'
 
 @ApiTags('System - 服务监控')
-@ApiSecurityAuth()
+@ApiBearerAuth()
 @ApiExtraModels(ServeStatInfo)
 @Controller('serve')
 @UseInterceptors(CacheInterceptor)

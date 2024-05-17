@@ -1,8 +1,7 @@
 import { Body, Controller, Get, Post } from '@nestjs/common'
-import { ApiExtraModels, ApiOperation, ApiTags } from '@nestjs/swagger'
+import { ApiBearerAuth, ApiExtraModels, ApiOperation, ApiTags } from '@nestjs/swagger'
 
 import { ApiResult } from '@server/common/decorators/api-result.decorator'
-import { ApiSecurityAuth } from '@server/common/decorators/swagger.decorator'
 import { BusinessException } from '@server/common/exceptions/biz.exception'
 import { ErrorEnum } from '@server/constants/error-code.constant'
 
@@ -15,7 +14,7 @@ import { OnlineUserInfo } from './online.model'
 import { OnlineService } from './online.service'
 
 @ApiTags('System - 在线用户模块')
-@ApiSecurityAuth()
+@ApiBearerAuth()
 @ApiExtraModels(OnlineUserInfo)
 @Controller('online')
 export class OnlineController {

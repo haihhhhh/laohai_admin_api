@@ -2,10 +2,6 @@ import { InjectRedis } from '@liaoliaots/nestjs-redis'
 import { BadRequestException, Injectable } from '@nestjs/common'
 import { ConfigService } from '@nestjs/config'
 import { InjectEntityManager, InjectRepository } from '@nestjs/typeorm'
-import Redis from 'ioredis'
-import { isEmpty, isNil } from 'lodash'
-
-import { EntityManager, Like, Repository } from 'typeorm'
 
 import { BusinessException } from '@server/common/exceptions/biz.exception'
 import { ErrorEnum } from '@server/constants/error-code.constant'
@@ -18,6 +14,9 @@ import { RegisterDto } from '@server/modules/auth/dto/auth.dto'
 import { QQService } from '@server/shared/helper/qq.service'
 
 import { md5, randomValue } from '@server/utils'
+import Redis from 'ioredis'
+import { isEmpty, isNil } from 'lodash'
+import { EntityManager, Like, Repository } from 'typeorm'
 
 import { DictService } from '../system/dict/dict.service'
 import { RoleEntity } from '../system/role/role.entity'

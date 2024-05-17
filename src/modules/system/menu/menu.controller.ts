@@ -8,11 +8,10 @@ import {
   Put,
   Query,
 } from '@nestjs/common'
-import { ApiOperation, ApiTags } from '@nestjs/swagger'
+import { ApiBearerAuth, ApiOperation, ApiTags } from '@nestjs/swagger'
 
 import { ApiResult } from '@server/common/decorators/api-result.decorator'
 import { IdParam } from '@server/common/decorators/id-param.decorator'
-import { ApiSecurityAuth } from '@server/common/decorators/swagger.decorator'
 import { Perm, PermissionMap } from '@server/modules/auth/decorators/permission.decorator'
 import { MenuEntity } from '@server/modules/system/menu/menu.entity'
 import { flattenDeep } from 'lodash'
@@ -29,7 +28,7 @@ export const permissions: PermissionMap<'system:menu'> = {
 } as const
 
 @ApiTags('System - 菜单权限模块')
-@ApiSecurityAuth()
+@ApiBearerAuth()
 @Controller('menus')
 export class MenuController {
   constructor(private menuService: MenuService) { }

@@ -1,9 +1,8 @@
 import { Body, Controller, Delete, Get, Post, Put, Query } from '@nestjs/common'
-import { ApiOperation, ApiTags } from '@nestjs/swagger'
+import { ApiBearerAuth, ApiOperation, ApiTags } from '@nestjs/swagger'
 
 import { ApiResult } from '@server/common/decorators/api-result.decorator'
 import { IdParam } from '@server/common/decorators/id-param.decorator'
-import { ApiSecurityAuth } from '@server/common/decorators/swagger.decorator'
 import { Pagination } from '@server/helper/paginate/pagination'
 import { Perm, PermissionMap } from '@server/modules/auth/decorators/permission.decorator'
 import { TaskEntity } from '@server/modules/system/task/task.entity'
@@ -24,7 +23,7 @@ export const permissions: PermissionMap<'system:task'> = {
 } as const
 
 @ApiTags('System - 任务调度模块')
-@ApiSecurityAuth()
+@ApiBearerAuth()
 @Controller('tasks')
 export class TaskController {
   constructor(private taskService: TaskService) { }

@@ -1,9 +1,8 @@
 import { Body, Controller, Get, Post, Query } from '@nestjs/common'
 
-import { ApiOperation, ApiTags } from '@nestjs/swagger'
+import { ApiBearerAuth, ApiOperation, ApiTags } from '@nestjs/swagger'
 
 import { ApiResult } from '@server/common/decorators/api-result.decorator'
-import { ApiSecurityAuth } from '@server/common/decorators/swagger.decorator'
 
 import { Pagination } from '@server/helper/paginate/pagination'
 
@@ -14,7 +13,7 @@ import { StorageInfo } from './storage.modal'
 import { StorageService } from './storage.service'
 
 @ApiTags('Tools - 存储模块')
-@ApiSecurityAuth()
+@ApiBearerAuth()
 @Controller('storage')
 export class StorageController {
   constructor(private storageService: StorageService) { }
